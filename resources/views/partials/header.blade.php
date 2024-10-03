@@ -1,6 +1,6 @@
 <header>
         <nav class="navbar navbar-expand-md">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <h3 class="m-0">LOGO</h3>
                     {{-- config('app.name', 'Laravel') --}}
@@ -11,15 +11,9 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{url('/') }}">{{ __('Home') }}</a>
-                        </li>
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">

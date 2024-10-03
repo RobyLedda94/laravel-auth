@@ -5,8 +5,21 @@
 
 header {
     background-color: rgb(49, 109, 109);
+    height: 75px;
 
     .navbar-toggler:focus {
         box-shadow: none;
     }
+}
+
+#sidebar {
+    width: 100px;
+    height: calc(100vh - 75px);
+    background-color: rgb(49, 109, 109);
+}
+
+#content {
+    width: calc(100vw - 100px);
+    height: calc(100vh - 75px);
+    overflow-y: auto;
 }
