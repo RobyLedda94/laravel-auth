@@ -26,13 +26,7 @@
         @include('partials.header')
 
         <main class="d-flex">
-            <div id="sidebar">          
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item p-2">
-                        <a class="nav-link text-white" href="{{url('/') }}">{{ __('Home') }}</a>
-                    </li>
-                </ul>
-            </div>
+                @include('partials.sidebar')
             <div id="content">
                 @yield('content')
             </div>
