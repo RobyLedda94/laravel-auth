@@ -5,7 +5,7 @@
 
 header {
     background-color: rgb(49, 109, 109);
-    height: 75px;
+    height: 100px;
 
     .navbar-toggler:focus {
         box-shadow: none;
@@ -14,12 +14,12 @@ header {
 
 #sidebar {
     width: 100px;
-    height: calc(100vh - 75px);
+    height: calc(100vh - 100px);
     background-color: rgb(49, 109, 109);
 }
 
 #content {
     width: calc(100vw - 100px);
-    height: calc(100vh - 75px);
+    height: calc(100vh - 100px);
     overflow-y: auto;
 }
