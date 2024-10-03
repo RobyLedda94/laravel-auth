@@ -10,6 +10,7 @@
     @include('partials.header')
     <main>
         <h1 class="text-center mt-5">Questa è la tua homepage</h1>
+        <!-- @yield('content') -->
     </main>
 </body>
 </html>
