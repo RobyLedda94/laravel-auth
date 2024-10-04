@@ -35,7 +35,7 @@ class UpdatePostRequest extends FormRequest
     public function messages() {
         return [
             'title.required' => 'Il titolo è obbligatorio.',
-            'title.unique' => 'Il titolo deve essere unico.',
+            'title.unique' => 'Il titolo deve essere univoco.',
             'title.max' => 'Il titolo non può superare i 50 caratteri.',
             'content.required' => 'Il contenuto è obbligatorio.',
             'content.min' => 'Il contenuto deve contenere almeno 10 caratteri.',

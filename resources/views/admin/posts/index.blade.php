@@ -25,12 +25,19 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->slug }}</td>
                                 <td>
-                                    <a href="{{ route('admin.posts.show', ['post' => $post->id])}}" class="btn btn-sm btn-primary">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                    <a href="{{ route('admin.posts.edit', ['post' => $post->id])}}" class="btn btn-sm btn-warning">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
+                                    <div class="d-flex">
+                                        <a href="{{ route('admin.posts.show', ['post' => $post->id])}}" class="me-2 btn btn-sm btn-primary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="{{ route('admin.posts.edit', ['post' => $post->id])}}" class="me-2 btn btn-sm btn-warning">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger delete">Cancella</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
