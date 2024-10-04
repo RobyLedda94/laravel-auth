@@ -26,7 +26,20 @@ class StorePostRequest extends FormRequest
         return [
             'title' => 'required|unique:posts|max:50',
             'content' => 'required|min:10',
+            'slug' => 'required|max:255'
             
+        ];
+    }
+
+    public function messages() {
+        return [
+            'title.required' => 'Il titolo è obbligatorio.',
+            'title.unique' => 'Il titolo deve essere unico.',
+            'title.max' => 'Il titolo non può superare i 50 caratteri.',
+            'content.required' => 'Il contenuto è obbligatorio.',
+            'content.min' => 'Il contenuto deve contenere almeno 10 caratteri.',
+            'slug.required' => 'Obbligatorio inserire un titolo per lo slug.',
+            'slug.max' => 'Lo slug non può superare i 255 caratteri.',
         ];
     }
 }
