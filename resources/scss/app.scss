@@ -22,4 +22,8 @@ header {
     width: calc(100vw - 100px);
     height: calc(100vh - 100px);
     overflow-y: auto;
+
+    .textarea-sm {
+        height: 100px;
+    }
 }

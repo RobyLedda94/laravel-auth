@@ -4,7 +4,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <h3>Tabella</h3>
+                <h3 class="my-3">Tabella</h3>
+                <a href="{{ route('admin.posts.create')}}" class="btn btn-sm btn-primary">Aggiungi nuovo elemento</a>
+                <hr>
             </div>
             <div class="col-12">
                 <table class="table table-striped">
