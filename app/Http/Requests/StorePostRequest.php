@@ -24,9 +24,9 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:posts|max:50',
-            'content' => 'required|min:10',
-            'slug' => 'required|max:255'
+            'title' => ['required','unique:posts','max:50'],
+            'content' => ['required','min:10'],
+            // 'slug' => 'required|max:255'
             
         ];
     }
@@ -38,8 +38,8 @@ class StorePostRequest extends FormRequest
             'title.max' => 'Il titolo non può superare i 50 caratteri.',
             'content.required' => 'Il contenuto è obbligatorio.',
             'content.min' => 'Il contenuto deve contenere almeno 10 caratteri.',
-            'slug.required' => 'Obbligatorio inserire un titolo per lo slug.',
-            'slug.max' => 'Lo slug non può superare i 255 caratteri.',
+            // 'slug.required' => 'Obbligatorio inserire un titolo per lo slug.',
+            // 'slug.max' => 'Lo slug non può superare i 255 caratteri.',
         ];
     }
 }
