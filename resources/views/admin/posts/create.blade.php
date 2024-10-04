@@ -8,14 +8,14 @@
                     @csrf
                     <div class="form-group">
                         <label for="title" class="control-label"><strong>Titolo :</strong></label>
-                        <input type="text" name="title" id="title" class="form-control form-control-sm" placeholder="Inserisci il titolo">
+                        <input type="text" name="title" id="title" class="form-control form-control-sm" placeholder="Inserisci il titolo" value="{{ old('title') }}">
                     </div>
                     <div class="form-group my-3">
                         <label for="content" class="control-label"><strong>Contenuto :</strong></label>
-                        <textarea class="form-control form-control-sm w-100 textarea-sm" name="content" id="content" placeholder="Inserisci il contenuto"></textarea>
+                        <textarea class="form-control form-control-sm w-100 textarea-sm" name="content" id="content-post" placeholder="Inserisci il contenuto">{{ old('content') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-sm btn-success">Salva</button>
+                        <button type="submit" class="btn btn-sm btn-primary">Salva</button>
                     </div>
                 </form>
             </div>
