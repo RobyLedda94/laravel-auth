@@ -27,7 +27,7 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->slug }}</td>
                                 <td>
-                                    <div class="d-flex">
+                                    <div class="">
                                         <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="me-2 btn btn-sm btn-primary" aria-label="Visualizza post">
                                             <i class="fas fa-eye"></i>
                                         </a>
