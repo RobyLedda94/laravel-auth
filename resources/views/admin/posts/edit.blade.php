@@ -13,7 +13,7 @@
                 </div>
             @endif
             <div class="col-12">
-                <form action="{{ route('admin.posts.update', ['post' => $post->id]) }}" method="post">
+                <form action="{{ route('admin.posts.update', ['post' => $post->id]) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">

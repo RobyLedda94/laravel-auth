@@ -7,6 +7,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -93,7 +94,19 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
+        // dd($request->all());
         $form_data = $request->validated();
+        // verifico se e presente un immagine di copertina
+        if($request->hasFile('cover_image')){
+            // verifico se il post ha gia un immagine di coperina
+            if(Str::startsWith($post->cover_image, 'https') === false){
+                Storage::disk('public')->delete($post->cover_image);
+            }
+            $path = Storage::disk('public')->put('cover_image', $form_data['cover_image']);
+            $form_data['cover_image'] = $path;
+        }
+        // dd(Str::startsWith($post->cover_image, 'https'));
+
         $form_data['slug'] = Post::generateSlug($form_data['title'], '-');
         $post->update($form_data);
 
