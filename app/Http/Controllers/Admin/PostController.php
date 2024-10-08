@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -38,10 +39,18 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $form_data = $request->validated();
         $slug = Post::generateSlug($form_data['title']);
         $form_data['slug'] = $slug;
+        // controllo se request ha il file cover_image
+        if($request->hasFile('cover_image')){
+            // upload e salvo il path dell'immagine in una variabile
+            $path = Storage::disk('public')->put('cover_image', $form_data['cover_image']);
+            // assegno il valore della variabile alla chiave cover_image di form_data
+            $form_data['cover_image'] = $path;
+        }
+
         $post = new Post();
         $post->fill($form_data);
         $post->save();
