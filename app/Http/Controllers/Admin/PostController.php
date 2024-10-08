@@ -50,6 +50,10 @@ class PostController extends Controller
             // assegno il valore della variabile alla chiave cover_image di form_data
             $form_data['cover_image'] = $path;
         }
+        else{
+            // se non è presente l'immagine di copertina mettiamo quella di default
+            $form_data['cover_image'] = 'https://placehold.co/600x400?text=Immagine+copertina';
+        }
 
         $post = new Post();
         $post->fill($form_data);
