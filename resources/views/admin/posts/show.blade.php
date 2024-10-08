@@ -10,7 +10,11 @@
                 <p>{{$post->content}}</p>
             </div> -->
             <div class="card p-2" style="width: 18rem;">
+            @if (Str::startsWith($post->cover_image, 'https'))
+            <img class="img-fluid" src="{{ $post->cover_image }}" alt="{{ $post->title }}">
+            @else
             <img class="img-fluid" src="{{ asset('./storage/'. $post->cover_image) }}" alt="{{ $post->title }}">
+            @endif
                 <div class="card-body">
                     <h5 class="card-title">{{$post->title}}</h5>
                     <p class="card-text">{{$post->slug}}</p>
