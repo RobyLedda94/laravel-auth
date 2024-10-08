@@ -23,6 +23,17 @@
                             <span class="text-danger">{{ $message }}</span> 
                         @enderror
                     </div>
+                    <div class=" my-3 col-12">
+                    @if (Str::startsWith($post->cover_image, 'https'))
+                        <img class="img-fluid" src="{{ $post->cover_image }}" alt="{{ $post->title }}">
+                    @else
+                        <img class="img-fluid" src="{{ asset('./storage/'. $post->cover_image) }}" alt="{{ $post->title }}">
+                     @endif
+                     <div class=" my-3">
+                        <label for="" class="control-label">Immagine</label>
+                        <input type="file" name="cover_image" id="cover_image" class="form-control form-control-sm">
+                     </div>
+                    </div>
                     <div class="form-group my-3">
                         <label for="content" class="control-label"><strong>Contenuto :</strong></label>
                         <textarea class="form-control form-control-sm w-100 textarea-sm" name="content" id="content-post" placeholder="Inserisci il contenuto">{{ old('content', $post->content) }}</textarea>

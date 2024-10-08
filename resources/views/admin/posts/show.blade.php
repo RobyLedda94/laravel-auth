@@ -20,6 +20,9 @@
                     <p class="card-text">{{$post->slug}}</p>
                     <p class="card-text">{{$post->content}}</p>
                 </div>
+                <div class="card-footer text-muted">
+                        <small>Pubblicato il {{ $post->created_at->format('d/m/Y') }}</small>
+                </div>
             </div>
         </div>
     </div>
